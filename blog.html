@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Insights | Advanced Recovery Therapy</title>
+    <script src="https://cdn-tailwindcss.vercel.app/"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Adhering to the 12-Point Design System */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+            color: #1E293B; 
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        h1, h2, h3 { line-height: 1.2; }
+        p, li { line-height: 1.7; }
+
+        /* Style for the blog post card overlay */
+        .blog-card-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+        }
+
+        /* Dropdown Styles */
+        .group:hover .group-hover\:visible {
+            visibility: visible;
+        }
+        .group:hover .group-hover\:opacity-100 {
+            opacity: 1;
+        }
+        .group:hover .group-hover\:translate-y-0 {
+            transform: translateY(0);
+        }
+
+        /* Mobile Submenu Transition */
+        .mobile-submenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+        .mobile-submenu.open {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-white/90 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-slate-100">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="index.html" class="z-50 flex items-center">
+                    <img src="./images/logo.png" alt="ART Hyperbarics" class=" w-150 h-auto object-contain">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    
+                    <!-- Menu 1: ART Hyperbarics -->
+                    <div class="relative group">
+                        <button class="flex items-center text-slate-600 hover:text-sky-600 font-medium py-6 transition-colors">
+                            ART Hyperbarics
+                            <svg class="w-4 h-4 ml-1 transform group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <!-- Dropdown Menu -->
+                        <div class="absolute top-full left-0 w-64 bg-white shadow-xl rounded-b-xl border-t-4 border-sky-600 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
+                            <div class="py-2">
+                                <a href="what_is_hbot.html" class="block px-6 py-3 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600 cursor-pointer">What is HBOT?</a>
+                                <a href="benefits.html" class="block px-6 py-3 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600 cursor-pointer">Benefits of HBOT</a>
+                                <a href="about.html" class="block px-6 py-3 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600 cursor-pointer">About Us</a>
+                                <a href="blog.html" class="block px-6 py-3 text-sm text-sky-600 bg-sky-50 font-semibold cursor-pointer">Blog</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Menu 2: Before You Arrive -->
+                    <div class="relative group">
+                        <button class="flex items-center text-slate-600 hover:text-sky-600 font-medium py-6 transition-colors">
+                            Before You Arrive
+                            <svg class="w-4 h-4 ml-1 transform group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute top-full left-0 w-64 bg-white shadow-xl rounded-b-xl border-t-4 border-sky-600 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
+                            <div class="py-2">
+                                <a href="what_to_expect.html" class="block px-6 py-3 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600 cursor-pointer">What To Expect at ART</a>
+                                <a href="todo_not_to_do.html" class="block px-6 py-3 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600 cursor-pointer">To Do/Not To Do Guide</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Menu 3: Our Equipment -->
+                    <div class="relative group">
+                        <button class="flex items-center text-slate-600 hover:text-sky-600 font-medium py-6 transition-colors">
+                            Our Equipment
+                            <svg class="w-4 h-4 ml-1 transform group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute top-full left-0 w-64 bg-white shadow-xl rounded-b-xl border-t-4 border-sky-600 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
+                            <div class="py-2">
+                                <a href="chambers.html" class="block px-6 py-3 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600 cursor-pointer">Our Hyperbaric Chambers</a>
+                                <a href="resources.html" class="block px-6 py-3 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600 cursor-pointer">Hyperbaric Resources</a>
+                                <a href="erchonia_therapy.html" class="block px-6 py-3 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600 cursor-pointer">Erchonia Cold Laser Therapy</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Menu 4: How To Book -->
+                    <div class="relative group">
+                        <button class="flex items-center bg-sky-600 text-white font-medium px-5 py-2.5 rounded-lg shadow hover:bg-sky-700 transition-all duration-300 transform hover:-translate-y-0.5">
+                            How To Book
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute top-full right-0 w-64 bg-white shadow-xl rounded-xl border border-slate-100 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 mt-2">
+                            <div class="py-2">
+                                <a href="how_to_book.html" class="block px-6 py-3 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600 cursor-pointer rounded-t-xl">How To Book Your Session</a>
+                                <a href="schedule.html" class="block px-6 py-3 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600 cursor-pointer rounded-b-xl">Schedule an Appointment</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="lg:hidden text-slate-800 p-2 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white/98 backdrop-blur-xl border-t border-slate-200 h-screen overflow-y-auto pb-20">
+            <nav class="flex flex-col p-4 space-y-1">
+                
+                <!-- Mobile Dropdown 1 -->
+                <div class="border-b border-slate-100">
+                    <button class="w-full flex justify-between items-center text-left text-slate-800 font-semibold py-4" onclick="toggleMobileSubmenu('mob-sub-1')">
+                        ART Hyperbarics
+                        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="mob-sub-1" class="mobile-submenu bg-slate-50 rounded-lg">
+                        <a href="what_is_hbot.html" class="block px-4 py-3 text-slate-600 hover:text-sky-600">What is HBOT?</a>
+                        <a href="benefits.html" class="block px-4 py-3 text-slate-600 hover:text-sky-600">Benefits of HBOT</a>
+                        <a href="about.html" class="block px-4 py-3 text-slate-600 hover:text-sky-600">About Us</a>
+                        <a href="blog.html" class="block px-4 py-3 text-sky-600 font-semibold bg-sky-50">Blog</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Dropdown 2 -->
+                <div class="border-b border-slate-100">
+                    <button class="w-full flex justify-between items-center text-left text-slate-800 font-semibold py-4" onclick="toggleMobileSubmenu('mob-sub-2')">
+                        Before You Arrive
+                        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="mob-sub-2" class="mobile-submenu bg-slate-50 rounded-lg">
+                        <a href="what_to_expect.html" class="block px-4 py-3 text-slate-600 hover:text-sky-600">What To Expect at ART</a>
+                        <a href="todo_not_to_do.html" class="block px-4 py-3 text-slate-600 hover:text-sky-600">To Do/Not To Do Guide</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Dropdown 3 -->
+                <div class="border-b border-slate-100">
+                    <button class="w-full flex justify-between items-center text-left text-slate-800 font-semibold py-4" onclick="toggleMobileSubmenu('mob-sub-3')">
+                        Our Equipment
+                        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="mob-sub-3" class="mobile-submenu bg-slate-50 rounded-lg">
+                        <a href="chambers.html" class="block px-4 py-3 text-slate-600 hover:text-sky-600">Our Hyperbaric Chambers</a>
+                        <a href="resources.html" class="block px-4 py-3 text-slate-600 hover:text-sky-600">Hyperbaric Resources</a>
+                        <a href="erchonia_therapy.html" class="block px-4 py-3 text-slate-600 hover:text-sky-600">Erchonia Cold Laser Therapy</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Dropdown 4 -->
+                <div class="border-b border-slate-100">
+                    <button class="w-full flex justify-between items-center text-left text-slate-800 font-semibold py-4" onclick="toggleMobileSubmenu('mob-sub-4')">
+                        How To Book
+                        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="mob-sub-4" class="mobile-submenu bg-slate-50 rounded-lg">
+                        <a href="how_to_book.html" class="block px-4 py-3 text-slate-600 hover:text-sky-600">How To Book Your Session</a>
+                        <a href="schedule.html" class="block px-4 py-3 text-slate-600 hover:text-sky-600">Schedule an Appointment</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Page Hero Section -->
+        <section class="pt-32 pb-16 md:pt-48 md:pb-24 bg-slate-50">
+            <div class="container mx-auto px-6 text-center">
+                <span class="text-sky-600 font-semibold tracking-wide reveal">ARTICLES & INSIGHTS</span>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mt-4 reveal" style="transition-delay: 100ms;">
+                    The ART of Recovery Blog
+                </h1>
+                <p class="text-lg text-slate-600 mt-6 max-w-3xl mx-auto reveal" style="transition-delay: 200ms;">
+                   Explore the science behind our therapies, discover patient success stories, and learn how you can optimize your health and accelerate your healing journey.
+                </p>
+            </div>
+        </section>
+
+        <!-- Blog Grid Section -->
+        <section class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Blog Post Card 1 -->
+                    <a href="blog-post-1.html" class="group block rounded-2xl overflow-hidden shadow-lg relative h-96 reveal">
+                        <img src="https://images.unsplash.com/photo-1517673400267-0251440c45dc?q=80&w=1770&auto=format&fit=crop" alt="Athlete tying shoelaces" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 blog-card-overlay"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <h3 class="text-2xl font-bold mb-2 transform transition-transform duration-300 group-hover:-translate-y-1">How Elite Athletes Use HBOT to Gain a Competitive Edge</h3>
+                            <p class="opacity-80">Discover the recovery secrets of top performers.</p>
+                        </div>
+                    </a>
+
+                    <!-- Blog Post Card 2 -->
+                    <a href="blog-post-2.html" class="group block rounded-2xl overflow-hidden shadow-lg relative h-96 reveal" style="transition-delay: 150ms;">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1770&auto=format&fit=crop" alt="Scientist looking at brain scans" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 blog-card-overlay"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <h3 class="text-2xl font-bold mb-2 transform transition-transform duration-300 group-hover:-translate-y-1">The Science of Neuro-Recovery: HBOT and Brain Health</h3>
+                            <p class="opacity-80">A deep dive into oxygen's role in cognitive function.</p>
+                        </div>
+                    </a>
+
+                    <!-- Blog Post Card 3 -->
+                    <a href="blog-post-3.html" class="group block rounded-2xl overflow-hidden shadow-lg relative h-96 reveal" style="transition-delay: 300ms;">
+                        <img src="./images/blog/healthyskin.png" alt="Close up of healthy, glowing skin" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 blog-card-overlay"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <h3 class="text-2xl font-bold mb-2 transform transition-transform duration-300 group-hover:-translate-y-1">Beyond Healing: HBOT for Longevity and Anti-Aging</h3>
+                            <p class="opacity-80">Learn how cellular health translates to youthful vitality.</p>
+                        </div>
+                    </a>
+                    
+                    <!-- Blog Post Card 4 (Placeholder) -->
+                    <a href="blog-post-4.html" class="group block rounded-2xl overflow-hidden shadow-lg relative h-96 reveal">
+                        <img src="./images/blog/drspeaking.png" alt="Patient speaking with a doctor" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 blog-card-overlay"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <h3 class="text-2xl font-bold mb-2 transform transition-transform duration-300 group-hover:-translate-y-1">5 Common Myths About Hyperbaric Therapy Debunked</h3>
+                             <p class="opacity-80">Separating fact from fiction.</p>
+                        </div>
+                    </a>
+
+                    <!-- Blog Post Card 5 (Placeholder) -->
+                    <a href="blog-post-5.html" class="group block rounded-2xl overflow-hidden shadow-lg relative h-96 reveal" style="transition-delay: 150ms;">
+                        <img src="./images/blog/yoga01.png" alt="Person doing yoga and meditating" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 blog-card-overlay"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <h3 class="text-2xl font-bold mb-2 transform transition-transform duration-300 group-hover:-translate-y-1">A Synergistic Approach: Combining HBOT with Other Therapies</h3>
+                            <p class="opacity-80">How a holistic plan can amplify your results.</p>
+                        </div>
+                    </a>
+
+                    <!-- Blog Post Card 6 (Placeholder) -->
+                    <a href="blog-post-6.html" class="group block rounded-2xl overflow-hidden shadow-lg relative h-96 reveal" style="transition-delay: 300ms;">
+                        <img src="./images/blog/patienttape.png" alt="A person's knee with kinesiology tape" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 blog-card-overlay"></div>
+                        <div class="absolute bottom-0 left-0 p-6 text-white">
+                            <h3 class="text-2xl font-bold mb-2 transform transition-transform duration-300 group-hover:-translate-y-1">Patient Story: How HBOT Accelerated My Post-Surgical Recovery</h3>
+                            <p class="opacity-80">A real-world look at the healing process.</p>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer (Consistent across all pages) -->
+    <footer class="bg-white py-8">
+        <div class="container mx-auto px-6 text-center text-slate-500">
+            <p>&copy; 2025 Advanced Recovery Therapy. All Rights Reserved.</p>
+            <p class="text-sm mt-2">The information on this site is not intended or implied to be a substitute for professional medical advice, diagnosis or treatment. All content, including text, graphics, images and information, contained on or available through this web site is for general information purposes only.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // On-scroll reveal animation logic
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach(el => observer.observe(el));
+            
+            // Logic for sticky header shadow
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 10) {
+                    header.classList.add('shadow-md');
+                } else {
+                    header.classList.remove('shadow-md');
+                }
+            });
+
+            // Mobile Menu Logic
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

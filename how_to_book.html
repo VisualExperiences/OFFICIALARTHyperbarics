@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Book? | ART Hyperbarics Scheduling Guide</title>
+    <script src="https://cdn-tailwindcss.vercel.app/"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Adhering to the 12-Point Design System */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+            color: #1E2B3B; 
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        h1, h2, h3 { line-height: 1.2; }
+        p, li { line-height: 1.7; }
+        
+        /* Custom Brush Stroke / Stamp Style for Step Numbers */
+        .step-stamp {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 4rem; /* w-16 */
+            height: 4rem; /* h-16 */
+            background-color: #0ea5e9; /* sky-500 equivalent */
+            color: white;
+            font-weight: 800; /* font-extrabold */
+            
+            /* Enhanced Irregular Shape for Painted/Stamped Look */
+            border-radius: 70% 30% 40% 60% / 55% 45% 55% 45%; 
+            transform: rotate(-7deg); /* More dynamic rotation */
+            box-shadow: 0 10px 20px -5px rgba(45, 194, 233, 0.4); /* Enhanced shadow */
+            transition: all 0.3s ease-in-out;
+        }
+
+        .step-stamp:hover {
+             transform: scale(1.05) rotate(0deg);
+        }
+
+        /* Dropdown Styles */
+        .group:hover .group-hover\:visible {
+            visibility: visible;
+        }
+        .group:hover .group-hover\:opacity-100 {
+            opacity: 1;
+        }
+        .group:hover .group-hover\:translate-y-0 {
+            transform: translateY(0);
+        }
+
+        /* Mobile Submenu Transition */
+        .mobile-submenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+        .mobile-submenu.open {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-white/90 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-slate-100">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="index.html" class="z-50 flex items-center">
+                    <img src="./images/logo.png" alt="ART Hyperbarics" class=" w-150 h-auto object-contain">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    
+                    <!-- Menu 1: ART Hyperbarics -->
+                    <div class="relative group">
+                        <button class="flex items-center text-slate-600 hover:text-sky-600 font-medium py-6 transition-colors">
+                            ART Hyperbarics
+                            <svg class="w-4 h-4 ml-1 transform group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <!-- Dropdown Menu -->
+                        <div class="absolute top-full left-0 w-64 bg-white shadow-xl rounded-b-xl border-t-4 border-sky-600 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
+                            <div class="py-2">
+                                <a href="what_is_hbot.html" class="block px-6 py-3 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600 cursor-pointer">What is HBOT?</a>
+                                <a href="benefits.html" class="block px-6 py-3 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600 cursor-pointer">Benefits of HBOT</a>
+                                <a href="about.html" class="block px-6 py-3 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600 cursor-pointer">About Us</a>
+                                <a href="blog.html" class="block px-6 py-3 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600 cursor-pointer">Blog</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Menu 2: Before You Arrive -->
+                    <div class="relative group">
+                        <button class="flex items-center text-slate-600 hover:text-sky-600 font-medium py-6 transition-colors">
+                            Before You Arrive
+                            <svg class="w-4 h-4 ml-1 transform group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute top-full left-0 w-64 bg-white shadow-xl rounded-b-xl border-t-4 border-sky-600 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
+                            <div class="py-2">
+                                <a href="what_to_expect.html" class="block px-6 py-3 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600 cursor-pointer">What To Expect at ART</a>
+                                <a href="todo_not_to_do.html" class="block px-6 py-3 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600 cursor-pointer">To Do/Not To Do Guide</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Menu 3: Our Equipment -->
+                    <div class="relative group">
+                        <button class="flex items-center text-slate-600 hover:text-sky-600 font-medium py-6 transition-colors">
+                            Our Equipment
+                            <svg class="w-4 h-4 ml-1 transform group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute top-full left-0 w-64 bg-white shadow-xl rounded-b-xl border-t-4 border-sky-600 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
+                            <div class="py-2">
+                                <a href="chambers.html" class="block px-6 py-3 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600 cursor-pointer">Our Hyperbaric Chambers</a>
+                                <a href="resources.html" class="block px-6 py-3 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600 cursor-pointer">Hyperbaric Resources</a>
+                                <a href="erchonia_therapy.html" class="block px-6 py-3 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600 cursor-pointer">Erchonia Cold Laser Therapy</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Menu 4: How To Book -->
+                    <div class="relative group">
+                        <button class="flex items-center bg-sky-600 text-white font-medium px-5 py-2.5 rounded-lg shadow hover:bg-sky-700 transition-all duration-300 transform hover:-translate-y-0.5">
+                            How To Book
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute top-full right-0 w-64 bg-white shadow-xl rounded-xl border border-slate-100 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 mt-2">
+                            <div class="py-2">
+                                <a href="how_to_book.html" class="block px-6 py-3 text-sm text-sky-600 bg-sky-50 font-semibold cursor-pointer rounded-t-xl">How To Book Your Session</a>
+                                <a href="schedule.html" class="block px-6 py-3 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600 cursor-pointer rounded-b-xl">Schedule an Appointment</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="lg:hidden text-slate-800 p-2 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white/98 backdrop-blur-xl border-t border-slate-200 h-screen overflow-y-auto pb-20">
+            <nav class="flex flex-col p-4 space-y-1">
+                
+                <!-- Mobile Dropdown 1 -->
+                <div class="border-b border-slate-100">
+                    <button class="w-full flex justify-between items-center text-left text-slate-800 font-semibold py-4" onclick="toggleMobileSubmenu('mob-sub-1')">
+                        ART Hyperbarics
+                        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="mob-sub-1" class="mobile-submenu bg-slate-50 rounded-lg">
+                        <a href="what_is_hbot.html" class="block px-4 py-3 text-slate-600 hover:text-sky-600">What is HBOT?</a>
+                        <a href="benefits.html" class="block px-4 py-3 text-slate-600 hover:text-sky-600">Benefits of HBOT</a>
+                        <a href="about.html" class="block px-4 py-3 text-slate-600 hover:text-sky-600">About Us</a>
+                        <a href="blog.html" class="block px-4 py-3 text-slate-600 hover:text-sky-600">Blog</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Dropdown 2 -->
+                <div class="border-b border-slate-100">
+                    <button class="w-full flex justify-between items-center text-left text-slate-800 font-semibold py-4" onclick="toggleMobileSubmenu('mob-sub-2')">
+                        Before You Arrive
+                        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="mob-sub-2" class="mobile-submenu bg-slate-50 rounded-lg">
+                        <a href="what_to_expect.html" class="block px-4 py-3 text-slate-600 hover:text-sky-600">What To Expect at ART</a>
+                        <a href="todo_not_to_do.html" class="block px-4 py-3 text-slate-600 hover:text-sky-600">To Do/Not To Do Guide</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Dropdown 3 -->
+                <div class="border-b border-slate-100">
+                    <button class="w-full flex justify-between items-center text-left text-slate-800 font-semibold py-4" onclick="toggleMobileSubmenu('mob-sub-3')">
+                        Our Equipment
+                        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="mob-sub-3" class="mobile-submenu bg-slate-50 rounded-lg">
+                        <a href="chambers.html" class="block px-4 py-3 text-slate-600 hover:text-sky-600">Our Hyperbaric Chambers</a>
+                        <a href="resources.html" class="block px-4 py-3 text-slate-600 hover:text-sky-600">Hyperbaric Resources</a>
+                        <a href="erchonia_therapy.html" class="block px-4 py-3 text-slate-600 hover:text-sky-600">Erchonia Cold Laser Therapy</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Dropdown 4 -->
+                <div class="border-b border-slate-100">
+                    <button class="w-full flex justify-between items-center text-left text-slate-800 font-semibold py-4" onclick="toggleMobileSubmenu('mob-sub-4')">
+                        How To Book
+                        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="mob-sub-4" class="mobile-submenu bg-slate-50 rounded-lg">
+                        <a href="how_to_book.html" class="block px-4 py-3 text-sky-600 font-semibold bg-sky-50">How To Book Your Session</a>
+                        <a href="schedule.html" class="block px-4 py-3 text-slate-600 hover:text-sky-600">Schedule an Appointment</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Page Hero Section -->
+        <section class="pt-32 pb-16 md:pt-48 md:pb-24 bg-slate-50">
+            <div class="container mx-auto px-6 text-center">
+                <span class="text-sky-600 font-semibold tracking-wide reveal">GETTING STARTED IS SIMPLE</span>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mt-4 reveal" style="transition-delay: 100ms;">
+                    How to Book a Consult or Session
+                </h1>
+                <p class="text-lg text-slate-600 mt-6 max-w-3xl mx-auto reveal" style="transition-delay: 200ms;">
+                   At ART Hyperbarics, your safety and results come first. Before your first hyperbaric session, all new patients are required to complete a 30-minute medical consult with one of our doctors.
+                </p>
+            </div>
+        </section>
+
+        <!-- Consultation Requirement and Details -->
+        <section class="py-24">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <h2 class="text-3xl font-bold text-slate-900 text-center reveal">New Patient Consult Details</h2>
+                <p class="text-lg text-slate-600 text-center mt-3 mb-12 reveal">
+                    This ensures we create a safe, effective, and fully customized treatment plan designed specifically for your health goals.
+                </p>
+
+                <!-- Details Card Grid -->
+                <div class="grid md:grid-cols-3 gap-6 bg-slate-50 p-8 rounded-2xl shadow-xl reveal">
+                    <div class="text-center p-4">
+                        <span class="text-2xl font-bold text-slate-800 block mb-1">Duration</span>
+                        <p class="text-sky-600 text-xl font-semibold">30 minutes</p>
+                    </div>
+                    <div class="text-center p-4 border-l border-r border-slate-300">
+                        <span class="text-2xl font-bold text-slate-800 block mb-1">Cost</span>
+                        <p class="text-sky-600 text-xl font-semibold">$50</p>
+                    </div>
+                    <!-- Purpose Column with Bullet Points -->
+                    <div class="text-center p-4">
+                        <span class="text-2xl font-bold text-slate-800 block mb-1">To Determine:</span>
+                        <!-- Adjusted font size and spacing for single-line fit -->
+                        <ul class="text-sky-600 text-sm font-semibold space-y-1 mt-2">
+                            <li class="flex items-center justify-center">
+                                <svg class="w-4 h-4 text-sky-600 mr-1.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Proper Pressure Levels
+                            </li>
+                            <li class="flex items-center justify-center">
+                                <svg class="w-4 h-4 text-sky-600 mr-1.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Session Frequency
+                            </li>
+                            <li class="flex items-center justify-center">
+                                <svg class="w-4 h-4 text-sky-600 mr-1.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Personalized Protocol
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Steps to Book -->
+        <section class="py-24 bg-white">
+            <div class="container mx-auto px-6 max-w-4xl">
+                
+                <!-- Step 1 -->
+                <div class="grid md:grid-cols-4 gap-8 items-start mb-16">
+                    <div class="md:col-span-1 text-center md:text-left reveal">
+                        <!-- Custom Branded Number Icon -->
+                        <div class="step-stamp mb-2 mx-auto md:mx-0">
+                            <span class="text-3xl">1</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mt-2">Call to Schedule</h3>
+                    </div>
+                    <div class="md:col-span-3 bg-slate-50 p-8 rounded-xl border border-slate-200 reveal" style="transition-delay: 100ms;">
+                        <p class="text-lg text-slate-600 mb-4">To book your consult, please contact ART Hyperbarics:</p>
+                        <a href="tel:770-321-0696" class="inline-flex items-center gap-3 bg-sky-600 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-sky-700 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                            <span class="text-xl">(770) 321-0696</span>
+                        </a>
+                        <p class="text-slate-600 mt-4">Our team will confirm your appointment and guide you through the next steps.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="grid md:grid-cols-4 gap-8 items-start">
+                    <div class="md:col-span-1 text-center md:text-left reveal">
+                        <!-- Custom Branded Number Icon -->
+                        <div class="step-stamp mb-2 mx-auto md:mx-0">
+                            <span class="text-3xl">2</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mt-2">Patient Portal</h3>
+                    </div>
+                    <div class="md:col-span-3 bg-slate-50 p-8 rounded-xl border border-slate-200 reveal" style="transition-delay: 100ms;">
+                        <p class="text-lg font-semibold text-slate-800 mb-4">After scheduling your consult, you will receive a secure link to create your ART Hyperbarics patient account.</p>
+                        <p class="text-slate-600 mb-6">Inside your personal portal, you can:</p>
+                        <ul class="space-y-3 pl-4">
+                            <li class="flex items-start text-slate-700">
+                                <!-- Replaced checkmark with on-brand SVG -->
+                                <svg class="w-5 h-5 text-sky-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span>Complete medical history and treatment forms</span>
+                            </li>
+                            <li class="flex items-start text-slate-700">
+                                <!-- Replaced checkmark with on-brand SVG -->
+                                <svg class="w-5 h-5 text-sky-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span>Explain your reason for treatment</span>
+                            </li>
+                            <li class="flex items-start text-slate-700">
+                                <!-- Replaced checkmark with on-brand SVG -->
+                                <svg class="w-5 h-5 text-sky-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span>Review and sign liability releases</span>
+                            </li>
+                            <li class="flex items-start text-slate-700">
+                                <!-- Replaced checkmark with on-brand SVG -->
+                                <svg class="w-5 h-5 text-sky-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span>Securely place a credit card on file</span>
+                            </li>
+                            <li class="flex items-start text-slate-700">
+                                <!-- Replaced checkmark with on-brand SVG -->
+                                <svg class="w-5 h-5 text-sky-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span>View upcoming sessions, payment information, and visit history</span>
+                            </li>
+                        </ul>
+                        <p class="text-slate-600 mt-6">
+                            This allows our doctors to review everything in advance, giving you more time during the consult to focus on your goals, questions, and individualized protocol.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="py-24 bg-slate-800">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-white reveal">Ready to Begin Your Healing Journey?</h2>
+                <p class="text-lg text-sky-100 mt-4 max-w-2xl mx-auto reveal" style="transition-delay: 150ms;">
+                    Our team at ART Hyperbarics is here to make your experience seamless, supportive, and effective from the very first step.
+                </p>
+                <div class="mt-10 reveal" style="transition-delay: 300ms;">
+                    <a href="tel:770-321-0696" class="bg-sky-600 text-white font-semibold text-lg px-8 py-4 rounded-lg shadow-lg hover:bg-sky-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl">
+                       Call to Schedule Your Consult
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer (Consistent across all pages) -->
+    <footer class="bg-white py-8 border-t border-slate-200">
+        <div class="container mx-auto px-6 text-center text-slate-500">
+            <p>&copy; 2025 Advanced Recovery Therapy. All Rights Reserved.</p>
+            <p class="text-sm mt-2">The information on this site is not intended or implied to be a substitute for professional medical advice, diagnosis or treatment. All content, including text, graphics, images and information, contained on or available through this web site is for general information purposes only.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // On-scroll reveal animation logic
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach(el => observer.observe(el));
+            
+            // Logic for sticky header shadow
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 10) {
+                    header.classList.add('shadow-md');
+                } else {
+                    header.classList.remove('shadow-md');
+                }
+            });
+
+            // Mobile Menu Logic
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+
+        // Mobile Submenu Logic
+        function toggleMobileSubmenu(id) {
+            const submenu = document.getElementById(id);
+            submenu.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>
