@@ -406,61 +406,172 @@
                         </div>
                     </div>
 
-                    <!-- Reviews Grid -->
-                    <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Reviews Carousel -->
+                    <div class="relative max-w-[1400px] mx-auto px-4 sm:px-12 reveal">
                         
-                        <!-- Review 1: Robyn W. -->
-                        <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-lg hover:shadow-xl transition-shadow reveal flex flex-col h-full">
-                            <div class="flex items-center mb-4 text-yellow-400">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            </div>
-                            <h4 class="font-bold text-lg text-slate-900 mb-4">"Phenomenal facility and people"</h4>
-                            <p class="text-slate-600 mb-6 text-sm flex-grow">
-                                "It’s difficult to find the words to express how phenomenal this facility is... I came here due to my brain cancer (astrocytoma type 2) and started with 20 sessions. Toward the end of my sessions I received an MRI that no longer detected cancer... I do believe this form of therapy did contribute to my healing from surgery and also from the cancer."
-                            </p>
-                            <div class="flex items-center mt-auto pt-4 border-t border-slate-50">
-                                <div class="bg-sky-100 text-sky-600 rounded-full h-10 w-10 flex items-center justify-center font-bold mr-3">R</div>
-                                <div>
-                                    <p class="font-bold text-slate-900">Robyn W.</p>
-                                    <p class="text-xs text-slate-500">Verified Patient</p>
+                        <!-- Navigation Buttons -->
+                        <button id="prev-review" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white border border-slate-200 text-slate-600 p-3 rounded-full shadow-lg hover:bg-sky-50 hover:text-sky-600 transition-all focus:outline-none hidden md:flex">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                        </button>
+                        <button id="next-review" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white border border-slate-200 text-slate-600 p-3 rounded-full shadow-lg hover:bg-sky-50 hover:text-sky-600 transition-all focus:outline-none hidden md:flex">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </button>
+
+                        <!-- Carousel Track Container -->
+                        <div class="overflow-hidden" id="reviews-carousel-container">
+                            <div class="flex transition-transform duration-500 ease-out" id="reviews-track">
+                                
+                                <!-- Review 1: Robyn W. -->
+                                <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4 mb-8">
+                                    <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full">
+                                        <div class="flex items-center mb-4 text-yellow-400">
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                        </div>
+                                        <h4 class="font-bold text-lg text-slate-900 mb-4">"Phenomenal facility and people"</h4>
+                                        <p class="text-slate-600 mb-6 text-sm flex-grow">
+                                            "It’s difficult to find the words to express how phenomenal this facility is... I came here due to my brain cancer (astrocytoma type 2) and started with 20 sessions... I do believe this form of therapy did contribute to my healing from surgery and also from the cancer."
+                                        </p>
+                                        <div class="flex items-center mt-auto pt-4 border-t border-slate-50">
+                                            <div class="bg-sky-100 text-sky-600 rounded-full h-10 w-10 flex items-center justify-center font-bold mr-3">R</div>
+                                            <div>
+                                                <p class="font-bold text-slate-900">Robyn W.</p>
+                                                <p class="text-xs text-slate-500">Verified Patient</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+
+                                <!-- Review 2: Rachel M. -->
+                                <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4 mb-8">
+                                    <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full">
+                                        <div class="flex items-center mb-4 text-yellow-400">
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                        </div>
+                                        <h4 class="font-bold text-lg text-slate-900 mb-4">"Recovering at a faster rate"</h4>
+                                        <p class="text-slate-600 mb-6 text-sm flex-grow">
+                                            "We knew we had been blessed to find the right place for our daughter... She had complete ACL reconstruction... She felt a difference after her first visit! She has experienced no depression and her anxiety has diminished. Better because of you guys!"
+                                        </p>
+                                        <div class="flex items-center mt-auto pt-4 border-t border-slate-50">
+                                            <div class="bg-sky-100 text-sky-600 rounded-full h-10 w-10 flex items-center justify-center font-bold mr-3">R</div>
+                                            <div>
+                                                <p class="font-bold text-slate-900">Rachel M.</p>
+                                                <p class="text-xs text-slate-500">Parent of Patient</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Review 3: Roy S. -->
+                                <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4 mb-8">
+                                    <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full">
+                                        <div class="flex items-center mb-4 text-yellow-400">
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                        </div>
+                                        <h4 class="font-bold text-lg text-slate-900 mb-4">"Nothing short of a miracle"</h4>
+                                        <p class="text-slate-600 mb-6 text-sm flex-grow">
+                                            "I had a stroke on the left side of my body... I noticed within the first week the positive changes in my motor skills and the way I felt was amazing! I continued to go for the next 2 months as my face became normal again! From feeling doomed to feeling better than my normal self was nothing short of a miracle."
+                                        </p>
+                                        <div class="flex items-center mt-auto pt-4 border-t border-slate-50">
+                                            <div class="bg-sky-100 text-sky-600 rounded-full h-10 w-10 flex items-center justify-center font-bold mr-3">R</div>
+                                            <div>
+                                                <p class="font-bold text-slate-900">Roy S.</p>
+                                                <p class="text-xs text-slate-500">Stroke Survivor</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Review 4: Joni S. -->
+                                <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4 mb-8">
+                                    <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full">
+                                        <div class="flex items-center mb-4 text-yellow-400">
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                        </div>
+                                        <h4 class="font-bold text-lg text-slate-900 mb-4">"I believe this is the future"</h4>
+                                        <p class="text-slate-600 mb-6 text-sm flex-grow">
+                                            "I have nothing to say but positive things about ART Hyperbarics. You feel so good when you leave there, and the staff is incredible! I believe this is the future."
+                                        </p>
+                                        <div class="flex items-center mt-auto pt-4 border-t border-slate-50">
+                                            <div class="bg-sky-100 text-sky-600 rounded-full h-10 w-10 flex items-center justify-center font-bold mr-3">J</div>
+                                            <div>
+                                                <p class="font-bold text-slate-900">Joni S.</p>
+                                                <p class="text-xs text-slate-500">Verified Patient</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Review 5: Christine S. -->
+                                <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4 mb-8">
+                                    <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full">
+                                        <div class="flex items-center mb-4 text-yellow-400">
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                        </div>
+                                        <h4 class="font-bold text-lg text-slate-900 mb-4">"Monumental in recovery"</h4>
+                                        <p class="text-slate-600 mb-6 text-sm flex-grow">
+                                            "Our son, James had a life threatening event with a 1 percent chance of survival... shortly after being on a bi-weekly hyperbaric regiment he fully recovered and 10 months later is back at Clemson University as a freshman. ART with Dr. Ken, Sherri and Daniel were monumental in James’ recovery!"
+                                        </p>
+                                        <div class="flex items-center mt-auto pt-4 border-t border-slate-50">
+                                            <div class="bg-sky-100 text-sky-600 rounded-full h-10 w-10 flex items-center justify-center font-bold mr-3">C</div>
+                                            <div>
+                                                <p class="font-bold text-slate-900">Christine S.</p>
+                                                <p class="text-xs text-slate-500">Parent of Patient</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Review 6: Michelle M. -->
+                                <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4 mb-8">
+                                    <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full">
+                                        <div class="flex items-center mb-4 text-yellow-400">
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                        </div>
+                                        <h4 class="font-bold text-lg text-slate-900 mb-4">"Passion for helping people"</h4>
+                                        <p class="text-slate-600 mb-6 text-sm flex-grow">
+                                            "Wonderful experiences with Daniel and Dr. Ken. They truly have a passion for helping people feel better and are so knowledgeable in every way. Since going to ART my skin is clearer, my brain is functioning better, and my sleep quality is awesome. Love these guys!"
+                                        </p>
+                                        <div class="flex items-center mt-auto pt-4 border-t border-slate-50">
+                                            <div class="bg-sky-100 text-sky-600 rounded-full h-10 w-10 flex items-center justify-center font-bold mr-3">M</div>
+                                            <div>
+                                                <p class="font-bold text-slate-900">Michelle M.</p>
+                                                <p class="text-xs text-slate-500">Verified Patient</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Review 7: Alan J. -->
+                                <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4 mb-8">
+                                    <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full">
+                                        <div class="flex items-center mb-4 text-yellow-400">
+                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                        </div>
+                                        <h4 class="font-bold text-lg text-slate-900 mb-4">"Worth every single penny"</h4>
+                                        <p class="text-slate-600 mb-6 text-sm flex-grow">
+                                            "As a professional musician my health is everything... I was impressed by the professionalism of Ken, Daniel and the family. After my first session, for the first time in perhaps years, I was able to feel healthy and revitalized. This is more than just a paycheck for them- this is a life passion."
+                                        </p>
+                                        <div class="flex items-center mt-auto pt-4 border-t border-slate-50">
+                                            <div class="bg-sky-100 text-sky-600 rounded-full h-10 w-10 flex items-center justify-center font-bold mr-3">A</div>
+                                            <div>
+                                                <p class="font-bold text-slate-900">Alan J.</p>
+                                                <p class="text-xs text-slate-500">Professional Musician</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
-
-                        <!-- Review 2: Rachel M. -->
-                        <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-lg hover:shadow-xl transition-shadow reveal flex flex-col h-full" style="transition-delay: 150ms;">
-                            <div class="flex items-center mb-4 text-yellow-400">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            </div>
-                            <h4 class="font-bold text-lg text-slate-900 mb-4">"Recovering at a faster rate"</h4>
-                            <p class="text-slate-600 mb-6 text-sm flex-grow">
-                                "We knew we had been blessed to find the right place for our daughter... She had complete ACL reconstruction... She felt a difference after her first visit! For the first time since surgery, she was able to sleep that night. She has experienced no depression and her anxiety has diminished. Better because of you guys!"
-                            </p>
-                            <div class="flex items-center mt-auto pt-4 border-t border-slate-50">
-                                <div class="bg-sky-100 text-sky-600 rounded-full h-10 w-10 flex items-center justify-center font-bold mr-3">R</div>
-                                <div>
-                                    <p class="font-bold text-slate-900">Rachel M.</p>
-                                    <p class="text-xs text-slate-500">Parent of Patient</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Review 3: Roy S. -->
-                        <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-lg hover:shadow-xl transition-shadow reveal flex flex-col h-full" style="transition-delay: 300ms;">
-                            <div class="flex items-center mb-4 text-yellow-400">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            </div>
-                            <h4 class="font-bold text-lg text-slate-900 mb-4">"Nothing short of a miracle"</h4>
-                            <p class="text-slate-600 mb-6 text-sm flex-grow">
-                                "I had a stroke on the left side of my body... I noticed within the first week the positive changes in my motor skills and the way I felt was amazing! I continued to go for the next 2 months as my face became normal again! From feeling doomed to feeling better than my normal self was nothing short of a miracle."
-                            </p>
-                            <div class="flex items-center mt-auto pt-4 border-t border-slate-50">
-                                <div class="bg-sky-100 text-sky-600 rounded-full h-10 w-10 flex items-center justify-center font-bold mr-3">R</div>
-                                <div>
-                                    <p class="font-bold text-slate-900">Roy S.</p>
-                                    <p class="text-xs text-slate-500">Stroke Survivor</p>
-                                </div>
-                            </div>
+                        
+                        <!-- Mobile Controls (Below) -->
+                        <div class="flex justify-center mt-4 md:hidden gap-4">
+                            <button onclick="document.getElementById('prev-review').click()" class="bg-white border border-slate-200 text-slate-600 p-3 rounded-full shadow-md">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                            </button>
+                            <button onclick="document.getElementById('next-review').click()" class="bg-white border border-slate-200 text-slate-600 p-3 rounded-full shadow-md">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </button>
                         </div>
 
                     </div>
@@ -670,6 +781,59 @@
                 window.scrollTo(0,0);
             }
         }
+
+	// --- Carousel Logic ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const track = document.getElementById('reviews-track');
+            const prevBtn = document.getElementById('prev-review');
+            const nextBtn = document.getElementById('next-review');
+            let currentIndex = 0;
+            const totalSlides = 7; 
+
+            // Function to update slide position
+            function updateCarousel() {
+                // Determine slides visible based on viewport
+                let slidesVisible = 1;
+                if (window.innerWidth >= 1024) slidesVisible = 3; // lg
+                else if (window.innerWidth >= 768) slidesVisible = 2; // md
+
+                const widthPercentage = 100 / slidesVisible;
+                
+                // Prevent scrolling past empty space at end
+                const maxIndex = totalSlides - slidesVisible;
+                if (currentIndex > maxIndex) currentIndex = maxIndex;
+                if (currentIndex < 0) currentIndex = 0;
+
+                track.style.transform = `translateX(-${currentIndex * widthPercentage}%)`;
+                
+                // Optional: Disable buttons at ends
+                prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+                nextBtn.style.opacity = currentIndex === maxIndex ? '0.5' : '1';
+            }
+
+            nextBtn.addEventListener('click', () => {
+                let slidesVisible = 1;
+                if (window.innerWidth >= 1024) slidesVisible = 3;
+                else if (window.innerWidth >= 768) slidesVisible = 2;
+                
+                if (currentIndex < totalSlides - slidesVisible) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            });
+
+            // Update on resize
+            window.addEventListener('resize', updateCarousel);
+            // Initial call
+            updateCarousel();
+        });
     </script>
 </body>
 </html>
