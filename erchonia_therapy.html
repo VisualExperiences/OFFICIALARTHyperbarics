@@ -64,7 +64,8 @@
             <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
                 <a href="index.html" class="z-50 flex items-center">
-                    <img src="./images/logo.png" alt="ART Hyperbarics" class=" w-150 h-auto object-contain">
+                    <!-- REPLACE src with your logo file path -->
+                    <img src="./images/logo.png" alt="ART Hyperbarics" class="h-10 w-auto object-contain">
                 </a>
 
                 <!-- Desktop Navigation -->
@@ -82,7 +83,7 @@
                                 <a href="what_is_hbot.html" class="block px-6 py-3 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600 cursor-pointer">What is HBOT?</a>
                                 <a href="benefits.html" class="block px-6 py-3 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600 cursor-pointer">Benefits of HBOT</a>
                                 <a href="what_is_cold_laser.html" class="block px-6 py-3 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600 cursor-pointer">What is Cold Laser Therapy?</a>
-				<a href="about.html" class="block px-6 py-3 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600 cursor-pointer">About Us</a>
+                                <a href="about.html" class="block px-6 py-3 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600 cursor-pointer">About Us</a>
                                 <a href="blog.html" class="block px-6 py-3 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600 cursor-pointer">Blog</a>
                             </div>
                         </div>
@@ -117,10 +118,19 @@
                         </div>
                     </div>
 
-                    <!-- Menu 4: How To Book (Direct Button) -->
-                    <a href="how_to_book.html" class="flex items-center bg-sky-600 text-white font-medium px-5 py-2.5 rounded-lg shadow hover:bg-sky-700 transition-all duration-300 transform hover:-translate-y-0.5">
-                        How To Book
-                    </a>
+                    <!-- Menu 4: How To Book -->
+                    <div class="relative group">
+                        <button class="flex items-center bg-sky-600 text-white font-medium px-5 py-2.5 rounded-lg shadow hover:bg-sky-700 transition-all duration-300 transform hover:-translate-y-0.5">
+                            How To Book
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute top-full right-0 w-64 bg-white shadow-xl rounded-xl border border-slate-100 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 mt-2">
+                            <div class="py-2">
+                                <a href="how_to_book.html" class="block px-6 py-3 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600 cursor-pointer rounded-t-xl">How To Book Your Session</a>
+                                <a href="schedule.html" class="block px-6 py-3 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600 cursor-pointer rounded-b-xl">Schedule an Appointment</a>
+                            </div>
+                        </div>
+                    </div>
 
                 </nav>
 
@@ -174,11 +184,16 @@
                     </div>
                 </div>
 
-                <!-- Mobile Direct Link 4 -->
+                <!-- Mobile Dropdown 4 -->
                 <div class="border-b border-slate-100">
-                    <a href="how_to_book.html" class="block w-full text-left text-slate-800 font-bold text-lg py-4 px-2 hover:text-sky-600">
+                    <button class="w-full flex justify-between items-center text-left text-slate-800 font-semibold py-4" onclick="toggleMobileSubmenu('mob-sub-4')">
                         How To Book
-                    </a>
+                        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="mob-sub-4" class="mobile-submenu bg-slate-50 rounded-lg">
+                        <a href="how_to_book.html" class="block px-4 py-3 text-slate-600 hover:text-sky-600">How To Book Your Session</a>
+                        <a href="schedule.html" class="block px-4 py-3 text-slate-600 hover:text-sky-600">Schedule an Appointment</a>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -198,6 +213,83 @@
             </div>
         </section>
 
+        <!-- What It Is & How It Works -->
+        <section class="py-24">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <div class="grid md:grid-cols-2 gap-12 items-start">
+                    
+                    <!-- Column 1: What It Is (Framed 1:1 Image) -->
+                    <div class="reveal">
+                        <h2 class="text-3xl font-bold text-slate-900 mb-4">What is the Erchonia Cold Laser?</h2>
+                        <p class="text-xl text-slate-700 mb-6">
+                            The Erchonia Cold Laser is a <strong><em>Low-Level Laser Therapy (LLLT)</em></strong> device. Unlike surgical or “hot” lasers that cut or burn tissue, this laser uses very low levels of light—but are a high energy—that don’t produce heat.
+                        </p>
+                        <!-- 1:1 Centered Image Container -->
+                        <div class="w-full max-w-sm mx-auto mt-8">
+                            <img src="https://placehold.co/600x600/e0f2fe/0ea5e9?text=Erchonia+Laser+Therapy" alt="Illustration of a cold laser being applied to skin" class="w-full aspect-square object-cover rounded-2xl shadow-xl border-4 border-white">
+                        </div>
+                    </div>
+
+                    <!-- Column 2: How It Works -->
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-xl reveal" style="transition-delay: 150ms;">
+                        <h2 class="text-3xl font-bold text-slate-900 mb-6">How Does It Work? (Cellular Power Up)</h2>
+                        
+                        <!-- Step 1 -->
+                        <div class="flex items-start mb-6">
+                            <div class="value-icon mr-4 mt-1 flex-shrink-0">
+                                <span class="font-bold text-xl">1</span>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-slate-800">Light Delivery</h3>
+                                <p class="text-slate-600">The laser shines a specific wavelength of light onto the skin, penetrating deep into the cells.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 2 -->
+                        <div class="flex items-start mb-6">
+                            <div class="value-icon mr-4 mt-1 flex-shrink-0">
+                                <span class="font-bold text-xl">2</span>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-slate-800">Mitochondria Stimulation</h3>
+                                <p class="text-slate-600">This light stimulates the mitochondria (the “power plants” of cells).</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 3 -->
+                        <div class="flex items-start mb-6">
+                            <div class="value-icon mr-4 mt-1 flex-shrink-0">
+                                <span class="font-bold text-xl">3</span>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-slate-800">ATP Production</h3>
+                                <p class="text-slate-600">The mitochondria respond by making more ATP (adenosine triphosphate), which is the cell’s main source of energy.</p>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-sky-600 mt-8 mb-4">With more energy, cells can:</h3>
+                        <ul class="space-y-3 text-slate-700">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-sky-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Repair themselves faster
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-sky-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Reduce inflammation
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-sky-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Improve circulation
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-sky-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Promote tissue healing
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- MERGED SECTION: Erchonia Systems (Revamped) -->
         <section class="py-24 bg-slate-50">
@@ -215,7 +307,11 @@
                         
                         <!-- 1:1 Graphic Placeholder -->
                         <div class="w-full aspect-square bg-slate-100 rounded-lg overflow-hidden border border-slate-200">
-                            <img src="./images/erchonia_therapy/erchonia_therapy02.png" alt="FX 405 Graphic" class="w-full h-full object-cover">
+                            <picture>
+                                <source srcset="./images/erchonia_therapy/erchonia_therapy02.avif" type="image/avif">
+                                <source srcset="./images/erchonia_therapy/erchonia_therapy02.webp" type="image/webp">
+                                <img src="./images/erchonia_therapy/erchonia_therapy02.png" alt="FX 405 Graphic" class="w-full h-full object-cover">
+                            </picture>
                         </div>
                     </div>
                     
@@ -227,7 +323,11 @@
                         
                         <!-- 1:1 Graphic Placeholder -->
                         <div class="w-full aspect-square bg-slate-100 rounded-lg overflow-hidden border border-slate-200">
-                            <img src="./images/erchonia_therapy/erchonia_therapy03.png" alt="GVL Graphic" class="w-full h-full object-cover">
+                            <picture>
+                                <source srcset="./images/erchonia_therapy/erchonia_therapy03.avif" type="image/avif">
+                                <source srcset="./images/erchonia_therapy/erchonia_therapy03.webp" type="image/webp">
+                                <img src="./images/erchonia_therapy/erchonia_therapy03.png" alt="GVL Graphic" class="w-full h-full object-cover">
+                            </picture>
                         </div>
                     </div>
 
@@ -239,7 +339,11 @@
                         
                         <!-- 1:1 Graphic Placeholder -->
                         <div class="w-full aspect-square bg-slate-100 rounded-lg overflow-hidden border border-slate-200">
-                            <img src="./images/erchonia_therapy/erchonia_therapy04.png" alt="EVRL Graphic" class="w-full h-full object-cover">
+                            <picture>
+                                <source srcset="./images/erchonia_therapy/erchonia_therapy04.avif" type="image/avif">
+                                <source srcset="./images/erchonia_therapy/erchonia_therapy04.webp" type="image/webp">
+                                <img src="./images/erchonia_therapy/erchonia_therapy04.png" alt="EVRL Graphic" class="w-full h-full object-cover">
+                            </picture>
                         </div>
                     </div>
 
@@ -268,7 +372,7 @@
     <!-- Footer (Consistent across all pages) -->
     <footer class="bg-white py-8 border-t border-slate-100 mt-auto">
         <div class="container mx-auto px-6 text-center text-slate-500">
-            <p>&copy; 2026 Advanced Recovery Therapy. All Rights Reserved.</p>
+            <p>&copy; 2025 Advanced Recovery Therapy. All Rights Reserved.</p>
             <p class="text-sm mt-2">The information on this site is not intended or implied to be a substitute for professional medical advice, diagnosis or treatment. All content, including text, graphics, images and information, contained on or available through this web site is for general information purposes only.</p>
         </div>
     </footer>
